@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task</title>
+    <link rel="stylesheet" href="task.css">
+</head>
+<body>
+    <div class="logout">
+        <button><a href="/logout">Log out</a></button>
+    </div>
+    <div class="task">
+        <form action="/task" method="post">
+            <label for="task">Task</label>
+            <input type="text" placeholder="Task" name="task" id="task">
+            <!-- <input type="text" placeholder="Email" name = "email"> -->
+            <input type="submit" value="Add">
+        </form>
+
+    </div>
+    <table>
+        <tr>
+            <th>id</th>
+        <th>Task</th>
+        <th>Update</th>
+        <th>Delete</th>
+        </tr>
+
+        <% if(task.length > 0){ %>
+            <% for(var i=0; i<task.length; i++){%>
+                <tr>
+                    <td><%- task[i].id %></td>
+                    <td><%- task[i].Task %></td>
+                    <td><a href="/updateTask?id=<%- task[i].id %>" target="_blank">UPDATE</a></td>
+                    <td><a href="/delete?id=<%- task[i].id %>" target="_blank">DELETE</a></td>
+                </tr>
+            <% } %>
+            
+        <%} else{%>
+            <h1> Data Not Found!</h1>
+            <% } %>
+        
+    </table>
+    
+</body>
+</html>

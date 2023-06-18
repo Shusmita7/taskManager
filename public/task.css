@@ -1,0 +1,135 @@
+/* *{
+    box-sizing: border-box;
+    font-size: 16px;
+    font-family: "Lucida Sans",sans-serif;
+}
+
+body{
+    background-image: url("noteBook1.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+.task {
+    width: 400px;
+    background-color: sandybrown;
+    margin: 100px auto;
+    border-radius: 10px;
+}
+
+.task h1 {
+    text-align: center;
+    color: #5b6574;
+    font-size: 24px;
+    padding: 20px 0 20px 0;
+    border-bottom: 1px solid #dee0e4;
+}
+.task form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-top: 20px;
+}
+.task form label {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 80px;
+    height: 50px;
+    color: #000000;
+}
+.task form input[type="text"], .book_add form input[type="number"] {
+    width: 280px;
+    height: 50px;
+    border: 1px solid #dee0e4;
+    margin-bottom: 20px;
+    padding: 0 15px;
+    border-radius: 5px;
+}
+.task form input[type="submit"] {
+    width: 80%;
+    padding: 15px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-color: #fc5a03;
+    border: 0;
+    cursor: pointer;
+    font-weight: bold;
+    color: #ffffff;
+    border-radius: 10px;
+}
+.task form input[type="submit"]:hover {
+    background-color: #fc3903;
+} */
+
+*{
+  box-sizing: border-box;
+  font-size: 16px;
+  font-family: "Lucida Sans",sans-serif;
+}
+body {
+    background-image: url("noteBook4.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+
+  }
+  
+  .task {
+    margin: 20px;
+  }
+  
+  .task form {
+    display: flex;
+    align-items: center;
+  }
+  
+  .task input[type="text"] {
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-right: 10px;
+  }
+  
+  .task  input[type="submit"] {
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: none;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  table {
+    margin: 20px;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  table th,
+  table td {
+    border: 1px solid #ccc;
+    padding: 8px;
+  }
+  
+  table th {
+    background-color: #f2f2f2;
+  }
+  
+  .logout {
+    margin: 20px;
+  }
+  
+  .logout button {
+    background: none;
+    border: none;
+    font-size: 16px;
+    color: #007bff;
+    cursor: pointer;
+    text-decoration: underline;
+  }
+  
+  .logout button:hover {
+    color: #0056b3;
+  }

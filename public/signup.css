@@ -1,0 +1,72 @@
+*{
+    box-sizing: border-box;
+    font-size: 16px;
+    font-family: "Lucida Sans",sans-serif;
+}
+
+body{
+    background-image: url("noteBook4.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
+.signup {
+    width: 400px;
+    background-color: #77aee9;
+    margin: 100px auto;
+    border-radius: 10px;
+}
+
+.signup h1 {
+    text-align: center;
+    color: #5b6574;
+    font-size: 24px;
+    padding: 20px 0 20px 0;
+    border-bottom: 1px solid #dee0e4;
+}
+.signup form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-top: 20px;
+}
+.signup form label {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 80px;
+    height: 50px;
+    color: #000000;
+}
+.signup form input[type="password"],.signup form input[type="email"],.signup form input[type="text"] {
+    width: 280px;
+    height: 50px;
+    border: 1px solid #dee0e4;
+    margin-bottom: 20px;
+    padding: 0 15px;
+    border-radius: 5px;
+}
+.signup form input[type="submit"] {
+    width: 80%;
+    padding: 15px;
+    margin-top: 20px;
+    background-color:  #0e046c;
+    border: 0;
+    cursor: pointer;
+    font-weight: bold;
+    color: #ffffff;
+    border-radius: 10px;
+}
+.signup form input[type="submit"]:hover {
+    background-color: #3503fc3b;
+}
+.signup p{
+    padding:0px 20px 20px 20px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.signup a{
+    text-decoration: none;
+}

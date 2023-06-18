@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UpdateTask</title>
+    <link rel="stylesheet" href="updateTask.css">
+</head>
+<body>
+    <div class="container">
+        <form action="/updateTaskData" method="post">
+            <input type="text" name="id" value="<%= task[0].id %>">
+            <input type="text" placeholder="Task" name="task" value="<%= task[0].Task %>">
+            <input type="submit" placeholder="Submit">
+        </form>
+
+    </div>
+    
+    
+</body>
+</html>
