@@ -3,20 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width initial-scale=1.0">
     <title>UpdateTask</title>
     <link rel="stylesheet" href="updateTask.css">
 </head>
 <body>
-    <div class="container">
+    <div class="task">
+        <h1>UPDATE TASK</h1>
         <form action="/updateTaskData" method="post">
-            <input type="text" name="id" value="<%= task[0].id %>">
-            <input type="text" placeholder="Task" name="task" value="<%= task[0].Task %>">
-            <input type="submit" placeholder="Submit">
+            <input type="text" name="id" value="<%= tasks[0].id %>"hidden>
+            <label for="task"> Task</label>
+            <input type="text"name="task" value="<%= tasks[0].Task %>"required>
+            <label for="time"> Date-Time</label>
+            <input type="datetime-local"name="time" value="<%= tasks[0].Time %>"required>
+            <input type="submit" placeholder="Update">
         </form>
-
-    </div>
-    
-    
+    </div>  
 </body>
 </html>

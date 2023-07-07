@@ -12,37 +12,54 @@
         <button><a href="/logout">Log out</a></button>
     </div>
     <div class="task">
-        <form action="/task" method="post">
-            <label for="task">Task</label>
-            <input type="text" placeholder="Task" name="task" id="task">
-            <!-- <input type="text" placeholder="Email" name = "email"> -->
-            <input type="submit" value="Add">
-        </form>
-
-    </div>
-    <table>
-        <tr>
-            <th>id</th>
-        <th>Task</th>
-        <th>Update</th>
-        <th>Delete</th>
-        </tr>
-
-        <% if(task.length > 0){ %>
-            <% for(var i=0; i<task.length; i++){%>
+        <h1>TASKS</h1>
+        <table>
+            <thead>
                 <tr>
-                    <td><%- task[i].id %></td>
-                    <td><%- task[i].Task %></td>
-                    <td><a href="/updateTask?id=<%- task[i].id %>" target="_blank">UPDATE</a></td>
-                    <td><a href="/delete?id=<%- task[i].id %>" target="_blank">DELETE</a></td>
+                    <th hidden>ID</th>
+                    <th>Task</th>
+                    <th>Time</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <% if (tasks.length > 0) { %>
+                <% for (var i = 0; i < tasks.length; i++) { %>
+                    <tr>
+                        <td hidden><%= tasks[i].id %></td>
+                        <td><%= tasks[i].Task %></td>
+                        <td><%= tasks[i].Time %></td>
+                        <td>
+                            <% if (tasks[i].Status !== 'Complete') { %>
+                                <%= tasks[i].Status %>
+                            <% } else { %>
+                                <del>Upcoming</del>
+                            <% } %>
+                        </td>
+                        <td>
+                            <button>
+                                <a href="/updatetaskData?id=<%= tasks[i].id %>" target="_blank">Update</a>
+                            </button>
+                            <button>
+                                <a href="/delete?id=<%= tasks[i].id %>" target="_blank">Delete</a>
+                            </button>
+                            <% if (tasks[i].Status !== 'Complete') { %>
+                                <form method="POST" action="/task/<%= tasks[i].id %>/complete">
+                                    <button type="submit">Complete</button>
+                                </form>
+                            <% } %>
+                        </td>
+                    </tr>
+                <% } %>
+            <% } else { %>
+                <tr>
+                    <td colspan="5">Data not found</td>
                 </tr>
             <% } %>
-            
-        <%} else{%>
-            <h1> Data Not Found!</h1>
-            <% } %>
-        
-    </table>
-    
+        </table>
+    </div>
+    <div class="add">
+        <button><a href="/taskAdd">Create Task</a></button>
+    </div>
 </body>
 </html>
