@@ -128,11 +128,11 @@ app.post("/taskAdd",function(req,res){
 app.get("/task",function(req,res){
     const now = moment();
     var sql = 'SELECT *, CASE ' +
-            'WHEN Time > now() THEN "Upcoming" ' +
-            'WHEN Time <= now() THEN "Pending" ' +
-            'ELSE "Completed" ' +
-            'END AS Status ' +
-            'FROM tasks';
+    'WHEN status = "Complete" THEN "Completed" '+
+    'WHEN Time > NOW() THEN "Upcoming" ' +
+    'ELSE "Pending" ' +
+    'END AS Status ' +
+    'FROM tasks';
 
     con.query(sql,function(error,result){
         if(error) throw error;

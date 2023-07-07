@@ -30,16 +30,17 @@
                         <td><%= tasks[i].Task %></td>
                         <td><%= tasks[i].Time %></td>
                         <td>
-                            <% if (tasks[i].Status !== 'Complete') { %>
-                                <%= tasks[i].Status %>
+                            <% if (tasks[i].Action === 'Complete') { %>
+                                <del>Completed</del>
+                           
                             <% } else { %>
-                                <del>Upcoming</del>
+                                <%= tasks[i].Status %>
                             <% } %>
                         </td>
                         <td>
                             <button>
                                 <a href="/updatetaskData?id=<%= tasks[i].id %>" target="_blank">Update</a>
-                            </button>
+                            </button><br>
                             <button>
                                 <a href="/delete?id=<%= tasks[i].id %>" target="_blank">Delete</a>
                             </button>
